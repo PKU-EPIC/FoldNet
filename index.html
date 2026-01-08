@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="FoldNet: Learning Generalizable Closed-Loop Policy for Garment Folding via Keypoint-Driven Asset and Demonstration Synthesis. FoldNet is a synthetic designed for robotic garment manipulation.">
+  <meta property="og:title" content="Robotics Research: Learning Hanger Insertion into Unseen Garments"/>
+  <meta property="og:description" content="A synthetic designed for robotic garment manipulation."/>
+  <meta property="og:url" content="https://pku-epic.github.io/FoldNet/"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/images/teaser.jpg" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="1600"/>
+
+  <!-- <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG"> -->
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/teaser.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="embodied ai, robotics, policy learning, synthetic dataset">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>FoldNet</title>
+  <link rel="icon" type="image/x-icon" href="static/images/icon.png">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> 
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">FoldNet: Learning Generalizable Closed-Loop Policy for Garment Folding via Keypoint-Driven Asset and Demonstration Synthesis</h1>
+          <div class="is-size-5 publication-authors">
+            <!-- Paper authors -->
+            <span class="author-block">
+              <a href="https://chen01yx.github.io" target="_blank">Yuxing Chen</a><sup>1,2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://Bowie375.github.io" target="_blank">Bowen Xiao</a><sup>1,2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://hughw19.github.io" target="_blank">He Wang</a><sup>1,2</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <!-- <span class="author-block">Institution Name<br>Conferance name and year</span> -->
+            <span class="author-block">
+              <sup>1</sup>CFCS, School of Computer Science, Peking University<br>
+              <sup>2</sup>GALBOT<br>
+              IEEE Robotics and Automation Letters (RA-L)<br>
+            </span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Arxiv PDF link -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2505.09109" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+              <!-- Github link -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/chen01yx/RoboHanger_code" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span> -->
+
+              <!-- ArXiv abstract Link -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2505.09109" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <img src="static/images/teaser.jpg" alt="input" class="img-responsive" style="width: 100%; text-align: center;" />
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Due to the deformability of garments, generating a large amount of diverse and high-quality data for robotic garment manipulation tasks is highly challenging. In this paper, we present FoldNet, a synthetic garment dataset that includes assets for four categories of clothing as well as high-quality closed-loop folding demonstrations. We begin by constructing geometric garment templates based on keypoints and applying generative models to generate realistic texture patterns. Leveraging these garment assets, we generate folding demonstrations in simulation and train folding policies via closed-loop imitation learning. To improve robustness, we introduce KG-DAgger, a keypoint-based strategy for generating recovery demonstrations after failures. KG-DAgger significantly improves the quality of generated demonstrations and the model performance, boosting the real-world success rate by 25%. After training with 15K trajectories (about 2M image-action pairs), the model achieves a 75% success rate in the real world. Experiments in both simulation and real-world settings validate the effectiveness of our proposed dataset.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Garment Mesh Synthesis</h2>
+        <img src="static/images/synthetic_data_pipeline.jpg" alt="input" class="img-responsive" style="width: 100%; text-align: center;" />
+        <div class="content has-text-justified">
+          <p>
+            <b>Pipeline for garment mesh synthesis.</b> By performing geometry generation, texture generation, combining-and-filtering, we can synthesize scalable, high-quality garment meshes.
+          </p>
+        </div>
+
+        <video poster="" id="tree" controls muted style="margin-top: 1.5rem; width: 100%; height: auto; margin: 0 auto;">
+          <source src="static/videos/rendered_video.mp4"
+          type="video/mp4">
+        </video>
+        <div class="content has-text-justified">
+          <p>
+            <b>Synthetic garment meshes.</b> These static garment meshes can be used for subsequent physics simulation and policy learning.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Demonstration Generation with KG-DAgger</h2>
+
+        <div class="columns is-centered">
+          <div class="column">
+            <div class="columns is-centered">
+              <div class="column content">
+                <video id="tree" controls playsinline height="100%">
+                  <source src="./static/videos/1.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="columns is-centered">
+              <div class="column content">
+                <video id="tree" controls playsinline height="100%">
+                  <source src="./static/videos/2.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <p>
+          Common method: generating perfect demonstration data.<br><br>
+        </p>
+
+        <div class="columns is-centered">
+          <div class="column">
+            <div class="columns is-centered">
+              <div class="column content">
+                <video id="tree" controls playsinline height="100%">
+                  <source src="./static/videos/3.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="columns is-centered">
+              <div class="column content">
+                <video id="tree" controls playsinline height="100%">
+                  <source src="./static/videos/4.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <p>
+          Our method (KG-DAgger): generating demonstration data that includes recovery from errors.<br><br>
+        </p>
+
+        <h2 class="title is-3">Large-Scale Data Synthesis in Simulation</h2>
+
+        <video poster="" id="tree" controls muted style="margin-top: 1.5rem; width: 100%; height: auto; margin: 0 auto;">
+          <source src="static/videos/sim_large_scale.mp4"
+          type="video/mp4">
+        </video>
+
+        <p>
+          We can generate large-scale and diverse demonstration data in simulation.
+        </p>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Zero-Shot Sim2Real Transfer</h2>
+        <video poster="" id="tree" controls muted style="margin-top: 1.5rem; width: 100%; height: auto; margin: 0 auto;">
+          <source src="static/videos/disturb.mp4"
+          type="video/mp4">
+        </video>
+        <p>
+          Our policy is robust to small perturbations in the real world.<br><br>
+        </p>
+
+        <video poster="" id="tree" controls muted style="margin-top: 1.5rem; width: 100%; height: auto; margin: 0 auto;">
+          <source src="static/videos/merge_zoom.mp4"
+          type="video/mp4">
+        </video>
+        <p>
+          Our policy is robust to small perturbations in the real world.<br><br>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!--BibTex citation -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+
+<pre><code>@misc{chen2025foldnetlearninggeneralizableclosedloop,
+      title={FoldNet: Learning Generalizable Closed-Loop Policy for Garment Folding via Keypoint-Driven Asset and Demonstration Synthesis}, 
+      author={Yuxing Chen and Bowen Xiao and He Wang},
+      year={2025},
+      eprint={2505.09109},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2505.09109}, 
+}</code></pre>
+
+  </div>
+</section>
+<!--End BibTex citation -->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+<!-- End of Statcounter Code -->
+
+</body>
+</html>
